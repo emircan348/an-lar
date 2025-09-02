@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keşif Bölüğü 1B Anıları</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.hizliresim.com/ltxdhmc.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .memory-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .memory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            border-left: 4px solid #4b6cb7;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #4b6cb7;
+            border-radius: 50%;
+        }
+        .gallery img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .story-box {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 5px solid #182848;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <header class="hero-bg text-center py-20 text-white">
+        <h1 class="text-5xl font-bold mb-4">Keşif Bölüğü 2025 1-B Anıları</h1>
+        <p class="text-xl">İyiki Varsınız BEYLERRR</p>
+    </header>
+
+    <nav class="bg-gray-800 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-center space-x-8">
+            <a href="#about" class="hover:text-blue-400 transition duration-300">Hakkında</a>
+            <a href="#gallery" class="hover:text-blue-400 transition duration-300">Foto Galeri</a>
+            <a href="#stories" class="hover:text-blue-400 transition duration-300">Hikayeler</a>
+            <a href="#timeline" class="hover:text-blue-400 transition duration-300">Zaman Çizelgesi</a>
+        </div>
+    </nav>
+
+    <section id="about" class="py-16 bg-gray-100 text-black">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Bu Serinin Amacı</h2>
+            <p class="text-lg max-w-4xl mx-auto mb-6">
+                Askerlik dostluklarının en güçlü bağ olduğunu biliyoruz. askerlik arkadaşlarıyla paylaştığımız anıları – güler yüzlü günlerden zorlu antrenmanlara kadar – birlikte sergilemek ve gelecek nesillere aktarmak için.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="memory-card p-6">
+                    <img src="https://i.hizliresim.com/k8tilev.jpg" alt="Symbolic image of a military flag waving in the wind against a background of distant mountains and clear sky, representing camaraderie and national pride during military service" class="rounded-lg mx-auto mb-4">
+                    <h3 class="text-xl font-semibold">Kardeşçilik</h3>
+                    <p>Arkadaşların desteğiyle aşılmış zorluklar bize hayat boyu ders oldu.</p>
+                </div>
+                <div class="memory-card p-6">
+                    <img src="https://i.hizliresim.com/q75rbfx.jpg" alt="Illustration of soldiers sharing meals in a cozy barracks setting with bunk beds, warm lighting, and personal items, depicting the close bonds formed during daily life in military service" class="rounded-lg mx-auto mb-4">
+                    <h3 class="text-xl font-semibold">Günlük Hayat</h3>
+                    <p>Küçük anılar – kahkahalar, sohbetler – büyük arkadaşlıkları oluşturdu.</p>
+                </div>
+                <div class="memory-card p-6">
+                    <img src="https://i.hizliresim.com/63vf8ep.jpg" alt="Dynamic scene of soldiers on a training ground with obstacles, running and supporting each other, under a bright sun, symbolizing teamwork and overcoming challenges in military training" class="rounded-lg mx-auto mb-4">
+                    <h3 class="text-xl font-semibold">Antrenman</h3>
+                    <p>Zorlu günlerdeki dayanışma, geri dönüp baktığımızda gurur verici.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-16 bg-white text-black">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Fotoğraflarımız</h2>
+            <p class="mb-6">Beraber Çekildiğimiz Fotolar</p>
+            <div id="photoGallery" class="gallery grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+                <!-- Default photos -->
+                <img src="https://i.hizliresim.com/5zgabbp.jpg" alt="Group photo of soldiers in uniform posing together on a military base with tents and vehicles in the background, smiling and showing camaraderie during off-duty moments" class="rounded-lg shadow-lg">
+                <img src="https://i.hizliresim.com/hzwzp2s.jpg" alt="Soldiers collaboratively cooking a meal in a field kitchen, laughing and stirring pots, with steam rising and sunny atmosphere evoking shared meal times in military service" class="rounded-lg shadow-lg">
+                <img src="https://i.hizliresim.com/p8arnn3.jpg" alt="Intensive military training scene with soldiers navigating an obstacle course, supporting each other, under clear sky, highlighting teamwork and physical challenges" class="rounded-lg shadow-lg">
+                <img src="https://i.hizliresim.com/310sezu.jpg" alt="Relaxed off-day moment with soldiers playing games like cards on benches outside barracks, with greenery and natural light, depicting leisure and friendship" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <section id="stories" class="py-16 bg-gray-200 text-black">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Askerlikten Sözler</h2>
+            <div class="max-w-3xl mx-auto">
+                <textarea id="storyInput" placeholder="Askerlik Sözünüzü buraya yazın..." rows="4" class="w-full p-3 border border-gray-300 rounded-lg mb-3"></textarea>
+                <button id="submitStoryBtn" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg">Söz Paylaş</button>
+            </div>
+            <div id="storiesList" class="max-w-3xl mx-auto mt-8 space-y-4">
+                <!-- Default stories -->
+                <div class="story-box fade-in">
+                    <strong>Recep:</strong> Naptın Be Abeee?
+                </div>
+                <div class="story-box fade-in">
+                    <strong>Enes Baş:</strong> İyi Dedim dimi ?
+                </div>
+                <div class="story-box fade-in">
+                    <strong>Emirhan:</strong> Dolap Seç Kırıyım Seni
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="py-16 bg-white text-black">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Zaman Çizelgesi</h2>
+            <div id="timelineContainer" class="max-w-2xl mx-auto">
+                <!-- Default timeline items -->
+                <div class="timeline-item mb-6 bg-gray-50 p-4 rounded-lg shadow">
+                    <div class="timeline-dot"></div>
+                    <strong>İlk Günler:</strong> Askerlik hayatının başlangıcı – adapte olma süreci ve tanışma süreciydi.
+                </div>
+                <div class="timeline-item mb-6 bg-gray-50 p-4 rounded-lg shadow">
+                    <div class="timeline-dot"></div>
+                    <strong>Antrenman Dönemi:</strong> Zorlu fiziksel eğitimler ve motive edici sıra lideri Recep Tayyip Akça yardımlarıyla güçlendik.
+                </div>
+                <div class="timeline-item mb-6 bg-gray-50 p-4 rounded-lg shadow">
+                    <div class="timeline-dot"></div>
+                    <strong>Arkadaşlık Günleri:</strong> 150 Gün boyunca yediğimiz içtiğimiz ayrı gitmedi. Arkadaştan öteydik umarım hayatınız istediğiniz gibi olur.
+                </div>
+                <div class="timeline-item mb-6 bg-gray-50 p-4 rounded-lg shadow">
+                    <div class="timeline-dot"></div>
+                    <strong>Terhis:</strong> Ayrılığın hüznü ama birbirimize söz verdiğimiz geleceğin hikayeleri.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8 text-center">
+        <p>© 2025 Askerlik Anıları Sergisi. by made M1RCAX</p>
+    </footer>
+
+    <script>
+        // Feature: Add Memory Popup
+        const addMemoryBtn = document.getElementById('addMemoryBtn');
+        addMemoryBtn.addEventListener('click', () => {
+            const memory = prompt('Yeni anınızı kısaca tarif edin:');
+            if (memory) {
+                const aboutSection = document.getElementById('about');
+                const card = document.createElement('div');
+                card.className = 'memory-card p-6 mt-6';
+                card.innerHTML = `
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f89fe2d8-65dc-46d5-93b6-b6f4f5f03d18.png" alt="Generic illustrative image of soldiers in a group setting sharing a moment of laughter, representing a new user-added memory from military service" class="rounded-lg mx-auto mb-4">
+                    <h3 class="text-xl font-semibold">Yeni Anı</h3>
+                    <p>${memory}</p>
+                `;
+                aboutSection.querySelector('.grid').appendChild(card);
+            }
+        });
+
+        // Feature: Upload Photo
+        const uploadPhotoBtn = document.getElementById('uploadPhotoBtn');
+        const photoInput = document.getElementById('photoInput');
+        const photoGallery = document.getElementById('photoGallery');
+        uploadPhotoBtn.addEventListener('click', () => {
+            const file = photoInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.alt = `User-uploaded memory photo from military service: ${file.name}`;
+                    img.className = 'rounded-lg shadow-lg';
+                    photoGallery.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+                photoInput.value = '';
+            }
+        });
+
+        // Feature: Share Story
+        const submitStoryBtn = document.getElementById('submitStoryBtn');
+        const storyInput = document.getElementById('storyInput');
+        const storiesList = document.getElementById('storiesList');
+        submitStoryBtn.addEventListener('click', () => {
+            const story = storyInput.value.trim();
+            if (story) {
+                const storyBox = document.createElement('div');
+                storyBox.className = 'story-box fade-in';
+                storyBox.innerHTML = `<strong>Yeni Anı:</strong> ${story}`;
+                storiesList.appendChild(storyBox);
+                storyInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
+</content>
+</create_file>
